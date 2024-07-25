@@ -13,6 +13,7 @@ namespace module10
         void Delete();
         void Read();
         void Update(); 
+        void Write();
 
     }
 }
