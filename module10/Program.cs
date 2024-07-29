@@ -3,42 +3,41 @@
 using System.Runtime.InteropServices;
 
 namespace module10 { 
-public class Manager : IManager
-{
-    public void Create()
-    {
-
-    }
-
-    public void Read()
-    {
-
-    }
-
-    public void Update()
-    {
-
-    }
-
-    public void Delete()
-    {
-
-    }
-
-        void IManager.Write()
-        {
-            throw new NotImplementedException();
-        }
-    }
 
 
-class Program
+    class Program
 {
   static void Main(string[] args)
     {
-            Manager manager = new Manager();    
-            ((IManager) manager).Write();  
-    }
+
+            //контравариация интерфейса
+            IUpdater<Account> updater1 = new UserService();
+            IUpdater<User> updater2 = new UserService();
+
+        }
 }
 
+}
+
+public interface IUpdater<in T>
+{
+    void Update(T entity);
+}
+
+public class User
+{
+
+}
+
+public class Account : User
+{
+
+}
+
+class UserService : IUpdater<User>
+{
+    public void Update(User entity)
+    {
+        throw new NotImplementedException();
+    }
 }
