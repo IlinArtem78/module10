@@ -36,7 +36,6 @@ namespace module10
             catch (ArgumentOutOfRangeException ex)
             {
                 Error(ex.Message);
-                Console.WriteLine(ex.Message);
                 return 0;
 
             }
@@ -58,9 +57,9 @@ namespace module10
             }
             catch (ArgumentOutOfRangeException ex)
             {
-                Console.WriteLine(ex.Message);
-                return 0;
                 Error(ex.Message);
+                return 0;
+                
             }
         }
 
