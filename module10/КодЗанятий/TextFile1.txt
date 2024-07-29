@@ -1,0 +1,28 @@
+﻿public interface IUpdater<in T>
+{
+    
+    void Update(T entity);
+}
+
+public class User
+{
+
+}
+
+public class Account : User
+{
+
+}
+
+class UserService : IUpdater<User>
+{
+    public void Update(User entity)
+    {
+        throw new NotImplementedException();
+    }
+
+
+
+     //контравариация интерфейса реализация в методе main
+            IUpdater<Account> updater1 = new UserService();
+            IUpdater<User> updater2 = new UserService();

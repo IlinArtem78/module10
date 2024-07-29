@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace module10
 {
-    public interface IMailer
+    public interface ILogger
     {
-        void SendEmail(); 
+        void Event(string message);
+        void Error(string message); 
     }
 }
